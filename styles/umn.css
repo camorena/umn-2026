@@ -554,45 +554,11 @@ section.color-reviews,
 
 .heroSwiper .welcome-slide .welcome-text {
 	text-align: center;
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	padding: clamp(30px, 6vw, 60px) clamp(35px, 10vw, 100px);
-	border-radius: 24px;
-	border: 3px solid transparent;
-	background-clip: padding-box;
-	max-width: 90%;
-	box-shadow:
-		0 25px 60px rgba(0, 38, 153, 0.2),
-		0 10px 30px rgba(0, 0, 0, 0.1),
-		inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	background: none;
+	padding: clamp(20px, 4vw, 40px);
+	max-width: 95%;
 	position: relative;
-	overflow: hidden;
 	animation: welcomeSlideIn 0.8s ease-out;
-}
-
-.heroSwiper .welcome-slide .welcome-text::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 4px;
-	background: linear-gradient(90deg, #e600ac, #00b33c, #002699, #e600ac);
-	background-size: 300% 100%;
-	animation: gradientShift 4s ease infinite;
-}
-
-.heroSwiper .welcome-slide .welcome-text::after {
-	content: '';
-	position: absolute;
-	bottom: -50%;
-	right: -20%;
-	width: 200px;
-	height: 200px;
-	background: radial-gradient(circle, rgba(0, 179, 60, 0.1) 0%, transparent 70%);
-	border-radius: 50%;
-	pointer-events: none;
 }
 
 @keyframes welcomeSlideIn {
@@ -606,18 +572,8 @@ section.color-reviews,
 	}
 }
 
-@keyframes gradientShift {
-	0%, 100% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-}
-
 .heroSwiper .welcome-slide .welcome-text:hover {
-	transform: translateY(-5px);
-	box-shadow:
-		0 35px 80px rgba(0, 38, 153, 0.25),
-		0 15px 40px rgba(0, 0, 0, 0.15),
-		inset 0 1px 0 rgba(255, 255, 255, 0.9);
-	transition: all 0.4s ease;
+	transform: none;
 }
 
 .heroSwiper .welcome-slide .welcome-title {
