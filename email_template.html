@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Un Mundo Nuevo Contact Form Submission</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-header {
+            background-color: #001A66;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .email-header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .email-body {
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        .greeting {
+            font-size: 22px;
+            color: #228B22;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .message-info {
+            margin-bottom: 20px;
+        }
+
+        .message-label {
+            font-weight: bold;
+            color: #001A66;
+        }
+
+        .message-content {
+            background-color: #f9f9f9;
+            border-left: 4px solid #FF33AA;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .email-footer {
+            background-color: #001A66;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #228B22;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #FF33AA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="https://unmundonuevo.school/img/logo.png" alt="Un Mundo Nuevo Logo">
+        </div>
+
+        <div class="email-body">
+            <div class="greeting">Dear Nelly & Sandy,</div>
+
+            <p>A new inquiry has been submitted through the Un Mundo Nuevo website contact form with the following
+                details:</p>
+
+            <div class="message-info">
+                <p><span class="message-label">Sender Name:</span> {{from_name}}</p>
+                <p><span class="message-label">Email Address:</span> {{reply_to}}</p>
+                <p><span class="message-label">Location of Interest:</span> {{location}}</p>
+                <p><span class="message-label">Inquiry Type:</span> {{subject}}</p>
+            </div>
+
+            <p class="message-label">Message Content:</p>
+            <div class="message-content">
+                {{message}}
+            </div>
+
+                      <div style="text-align: center;">
+                <a href="mailto:{{reply_to}}" class="contact-button">Respond to Inquiry</a>
+            </div>
+        </div>
+
+        <div class="email-footer">
+            <p>© 2025 Un Mundo Nuevo | Spanish Immersion Children's Academy</p>
+            <p>This is an automated notification from your website's contact form system.</p>
+        </div>
+    </div>
+</body>
+
+</html>

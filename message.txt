@@ -1,0 +1,86 @@
+'<style>fieldset {border: medium none !important;margin: 0 0 10px;min-width: 100%;padding: 0;width: 100%;}</style><div><form><h2>Unmundonuevo.school</h2><h4>New Message</h4><fieldset><label>Name : ' + requestBody.name + '</label><br></fieldset><fieldset><label>Email : ' + requestBody.email + '</label><br></fieldset><fieldset><label>Subject : ' + requestBody.subject + '</label></fieldset><fieldset><label>Message : ' + requestBody.message +'</label></fieldset></form></div>'
+ value: '<style>fieldset {border: medium none !important;margin: 0 0 10px;min-width: 100%;padding: 0;width: 100%;}</style><div>Dear Admin: <br><br> The following message was received at Unmundonuevo.school<br><br><fieldset><label><b>Name : </b>' + requestBody.name + '</label><br></fieldset><fieldset><label><b>Email : </b>' + requestBody.email + '</label><br></fieldset><fieldset><label><b>Subject : </b>' + requestBody.subject + '</label></fieldset><fieldset><label><b>Message : </b>' + requestBody.message +'</label></fieldset></b></form></div>Thank you'
+
+return {
+    from: {
+      email: 'admin@datelica.com',
+    },
+    personalizations: [
+      {
+        to: [
+          {
+            email: 'umnsica@gmail.com'
+          },
+        ],
+        bcc: [
+          {
+            email: 'camoren999@gmail.com'
+          },
+        ],
+        subject: 'Contact Message',
+      },
+    ],
+    content: [
+      {
+        type: 'text/html',
+        value: '<style>fieldset {border: medium none !important;margin: 0 0 10px;min-width: 100%;padding: 0;width: 100%;}</style><div>Dear Admin: <br><br> The following message was received at Unmundonuevo.school<br><br><fieldset><label><b>Name : </b>' + requestBody.name + '</label><br></fieldset><fieldset><label><b>Email : </b>' + requestBody.email + '</label><br></fieldset><fieldset><label><b>Subject : </b>' + requestBody.subject + '</label></fieldset><fieldset><label><b>Message : </b>' + requestBody.message +'</label></fieldset></b></form></div>Thank you'
+      },
+    ],
+  };
+
+
+         <section id="latestblog">
+            <div class="container">
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <h2>Locations</h2>
+                </div>
+                <!-- Carousel -->
+                <div class="row color_block">
+                    <div id="owl-blog" class="owl-carousel">
+                        <!-- Blog item 1 -->
+                        <div class="blog-preview col-md-12">
+                            <!-- Blog image -->
+                            <img src="img/blogprev1.jpg" alt="" />
+                            <div class="latest-caption text-center">
+                                
+                                    <h4>Apple Valley</h4>
+                                
+                                <!-- Post Info -->
+                                <div id="map-canvas">
+
+                                </div>
+                                <p>Lorem av ipsum dolor sit amet, dorem ipsuem ore consectetur adipisicing elit. Lorem
+                                    isuem amorem semprem Ratione, voluptatem lorem ipsuet alpacas dolorem animi nisi
+                                    autem...</p>
+                                <!-- Button-->
+                                <a class="btn" href="#contact">Contact</a>
+                            </div>
+                        </div>
+                        <!-- /blog-preview -->
+                        <!-- Blog item 2 -->
+                        <div class="blog-preview col-md-12">
+                            <!-- Blog image -->
+                            <img src="img/blogprev1.jpg" alt="" />
+                            <div class="latest-caption text-center">
+                               
+                                    <h4>Eagan / Burnsville</h4>
+                               
+                                <div id="map-canvas-1">
+
+                                </div>
+                                <p>Lorem av ipsum dolor sit amet, dorem ipsuem ore consectetur adipisicing elit. Lorem
+                                    isuem amorem semprem Ratione, voluptatem lorem ipsuet alpacas dolorem animi nisi
+                                    autem...</p>
+                                <!-- Button-->
+                                <a class="btn" href="#contact">Write US</a>
+                            </div>
+                        </div>
+                        <!-- /blog-preview -->
+                    </div>
+                    <!-- /owl-blog -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </section>
