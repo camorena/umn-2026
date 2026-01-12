@@ -541,7 +541,7 @@ section.color-reviews,
 	}
 }
 
-/* Welcome Slide - Full image with centered button */
+/* Welcome Slide - Full image with centered text */
 .heroSwiper .welcome-slide .slide-bg {
 	object-fit: cover;
 	object-position: center center;
@@ -549,29 +549,81 @@ section.color-reviews,
 
 .heroSwiper .welcome-slide .slide-content {
 	justify-content: center;
-	align-items: flex-end;
-	padding-bottom: 80px;
+	align-items: center;
 }
 
 .heroSwiper .welcome-slide .welcome-text {
 	text-align: center;
-	background: none;
-	padding: 0;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	padding: clamp(25px, 5vw, 50px) clamp(30px, 8vw, 80px);
+	border-radius: 16px;
+	border: none;
+	max-width: 90%;
+}
+
+.heroSwiper .welcome-slide .welcome-text:hover {
+	transform: none;
+}
+
+.heroSwiper .welcome-slide .welcome-title {
+	font-size: clamp(1.6rem, 5vw, 3.5rem);
+	font-weight: 900;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 8px;
+	text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
+	line-height: 1.2;
+}
+
+.heroSwiper .welcome-slide .welcome-tagline {
+	display: block;
+	font-size: clamp(1.1rem, 3vw, 1.8rem);
+	font-weight: 400;
+	color: #fff;
+	font-style: italic;
+	letter-spacing: 3px;
+	margin-bottom: clamp(18px, 3vw, 30px);
+	text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .heroSwiper .welcome-slide .welcome-text .btn {
-	font-size: 1.1rem;
-	padding: 14px 32px;
-	background: linear-gradient(135deg, #002699 0%, #0040cc 100%);
+	font-size: clamp(0.9rem, 2vw, 1.1rem);
+	padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 40px);
+	background: linear-gradient(135deg, #00b33c 0%, #00cc44 100%);
 	border: none;
-	box-shadow: 0 8px 25px rgba(0, 38, 153, 0.35);
+	box-shadow: 0 6px 20px rgba(0, 179, 60, 0.4);
 	transition: all 0.3s ease;
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 .heroSwiper .welcome-slide .welcome-text .btn:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 12px 35px rgba(0, 38, 153, 0.45);
-	background: linear-gradient(135deg, #0040cc 0%, #002699 100%);
+	box-shadow: 0 10px 30px rgba(0, 179, 60, 0.5);
+	background: linear-gradient(135deg, #00cc44 0%, #00b33c 100%);
+}
+
+/* Welcome slide responsive */
+@media (max-width: 767px) {
+	.heroSwiper .welcome-slide .welcome-text {
+		padding: 20px 25px;
+		max-width: 95%;
+	}
+
+	.heroSwiper .welcome-slide .welcome-title {
+		letter-spacing: 1px;
+	}
+
+	.heroSwiper .welcome-slide .welcome-tagline {
+		letter-spacing: 2px;
+	}
+
+	.heroSwiper .welcome-slide .welcome-text .btn {
+		display: inline-block !important;
+	}
 }
 
 /* Specific styling for Slide 2 - Position blob on the left bottom */
