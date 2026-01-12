@@ -621,40 +621,97 @@ section.color-reviews,
 }
 
 .heroSwiper .welcome-slide .welcome-title {
-	font-size: clamp(1.5rem, 5vw, 3.2rem);
+	font-size: clamp(1.8rem, 6vw, 4rem);
 	font-weight: 900;
-	background: linear-gradient(135deg, #002699 0%, #e600ac 50%, #00b33c 100%);
-	background-size: 200% auto;
+	background: linear-gradient(
+		90deg,
+		#ff0080 0%,
+		#ff8c00 15%,
+		#00e639 30%,
+		#00d4ff 45%,
+		#8000ff 60%,
+		#ff0080 75%,
+		#ff8c00 90%,
+		#00e639 100%
+	);
+	background-size: 300% auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	text-transform: uppercase;
-	letter-spacing: clamp(1px, 0.3vw, 3px);
-	margin-bottom: 12px;
-	line-height: 1.15;
-	animation: titleGradient 5s ease infinite;
+	letter-spacing: clamp(2px, 0.4vw, 5px);
+	margin-bottom: 18px;
+	line-height: 1.1;
+	animation: titleRainbow 3s linear infinite;
 	position: relative;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-@keyframes titleGradient {
-	0%, 100% { background-position: 0% center; }
-	50% { background-position: 200% center; }
+@keyframes titleRainbow {
+	0% { background-position: 0% center; }
+	100% { background-position: 300% center; }
 }
 
 .heroSwiper .welcome-slide .welcome-tagline {
 	display: inline-block;
-	font-size: clamp(1rem, 2.5vw, 1.5rem);
-	font-weight: 600;
+	font-size: clamp(1.1rem, 3vw, 1.8rem);
+	font-weight: 700;
 	color: #fff;
 	font-style: normal;
-	letter-spacing: clamp(2px, 0.5vw, 5px);
+	letter-spacing: clamp(3px, 0.8vw, 8px);
 	text-transform: uppercase;
-	margin-bottom: clamp(20px, 4vw, 35px);
-	background: linear-gradient(135deg, #002699 0%, #0040cc 100%);
-	padding: 10px 25px;
+	margin-bottom: clamp(25px, 4vw, 40px);
+	background: linear-gradient(135deg, #ff0080 0%, #e600ac 50%, #ff0080 100%);
+	background-size: 200% auto;
+	padding: 12px 35px;
 	border-radius: 50px;
-	box-shadow: 0 4px 15px rgba(0, 38, 153, 0.3);
+	box-shadow:
+		0 8px 30px rgba(230, 0, 172, 0.5),
+		0 4px 15px rgba(255, 0, 128, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.3);
 	position: relative;
+	animation: taglinePulse 2s ease-in-out infinite;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.heroSwiper .welcome-slide .welcome-tagline::before {
+	content: '✨';
+	position: absolute;
+	left: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.2em;
+	animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.heroSwiper .welcome-slide .welcome-tagline::after {
+	content: '✨';
+	position: absolute;
+	right: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.2em;
+	animation: sparkle 1.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes taglinePulse {
+	0%, 100% {
+		transform: scale(1);
+		box-shadow:
+			0 8px 30px rgba(230, 0, 172, 0.5),
+			0 4px 15px rgba(255, 0, 128, 0.3);
+	}
+	50% {
+		transform: scale(1.03);
+		box-shadow:
+			0 12px 40px rgba(230, 0, 172, 0.6),
+			0 6px 20px rgba(255, 0, 128, 0.4);
+	}
+}
+
+@keyframes sparkle {
+	0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+	50% { opacity: 0.6; transform: translateY(-50%) scale(1.3); }
 }
 
 .heroSwiper .welcome-slide .welcome-text .page-scroll {
@@ -704,12 +761,19 @@ section.color-reviews,
 /* Welcome slide responsive - Tablet */
 @media (max-width: 991px) {
 	.heroSwiper .welcome-slide .welcome-text {
-		padding: 28px 40px;
+		padding: 28px 50px;
 		max-width: 85%;
 	}
 
 	.heroSwiper .welcome-slide .welcome-tagline {
-		padding: 8px 20px;
+		padding: 10px 28px;
+	}
+
+	.heroSwiper .welcome-slide .welcome-tagline::before,
+	.heroSwiper .welcome-slide .welcome-tagline::after {
+		font-size: 1em;
+		left: -25px;
+		right: -25px;
 	}
 }
 
@@ -722,14 +786,20 @@ section.color-reviews,
 	}
 
 	.heroSwiper .welcome-slide .welcome-title {
-		margin-bottom: 10px;
+		margin-bottom: 12px;
+		letter-spacing: 1px;
 	}
 
 	.heroSwiper .welcome-slide .welcome-tagline {
-		padding: 8px 18px;
-		font-size: 0.85rem;
-		letter-spacing: 1.5px;
-		margin-bottom: 18px;
+		padding: 10px 22px;
+		font-size: 0.9rem;
+		letter-spacing: 2px;
+		margin-bottom: 20px;
+	}
+
+	.heroSwiper .welcome-slide .welcome-tagline::before,
+	.heroSwiper .welcome-slide .welcome-tagline::after {
+		display: none;
 	}
 
 	.heroSwiper .welcome-slide .welcome-text .btn {
